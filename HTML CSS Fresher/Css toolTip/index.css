@@ -1,0 +1,176 @@
+body {
+    background-color: rgb(255, 239, 253);
+}
+
+.Container {
+
+    height: 250px;
+    width: 650px;
+
+    margin: 200px auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+
+
+}
+
+/* left */
+.main_buttonleft {
+    height: 40px;
+    width: 100px;
+    background-color: rgb(142, 210, 231);
+    color: black;
+    padding: 5px;
+    font-size: 20px;
+    position: relative;
+    transition: all 0.3s linear;
+    border-radius: 7px;
+    border-style: none;
+
+}
+
+.tooltipleft {
+    height: 30px;
+    width: 100px;
+    color: azure;
+    opacity: 0;
+    background-color: rgb(25, 27, 29);
+    position: absolute;
+    top: 0px;
+    left: -120px;
+    border-radius: 7px;
+
+    transition: all 0.3s linear;
+    padding-top: 6px;
+
+}
+
+.main_buttonleft:hover {
+    transform: translate(-8px);
+}
+
+.main_buttonleft:hover .tooltipleft {
+    opacity: 1;
+}
+
+/* top */
+.main_buttontop {
+    height: 40px;
+    width: 100px;
+    border-radius: 7px;
+    border-style: none;
+    padding: 5px;
+    font-size: 20px;
+    position: relative;
+    transition: all 0.3s linear;
+    background-color: rgb(142, 210, 231);
+    color: black;
+
+}
+
+.tooltiptop {
+    height: 30px;
+    width: 100px;
+    color: azure;
+    opacity: 0;
+    background-color: rgb(25, 27, 29);
+    position: absolute;
+    top: -60px;
+    left: 0px;
+    border-radius: 7px;
+    opacity: 0;
+    transition: all 0.3s linear;
+    padding-top: 6px;
+
+}
+
+.main_buttontop:hover {
+    transform: translatey(-8px);
+}
+
+.main_buttontop:hover .tooltiptop {
+    opacity: 1;
+
+}
+
+/* bottom */
+
+.main_buttonbottom {
+    height: 40px;
+    width: 100px;
+    background-color: rgb(142, 210, 231);
+    color: black;
+    border-radius: 7px;
+    border-style: none;
+    padding: 5px;
+    font-size: 20px;
+    position: relative;
+    transition: all 0.3s linear;
+
+}
+
+.tooltipbottom {
+    height: 30px;
+    width: 100px;
+    color: azure;
+    opacity: 0;
+    background-color: rgb(25, 27, 29);
+    position: absolute;
+    top: 60px;
+    left: 0px;
+    border-radius: 7px;
+    opacity: 0;
+    transition: all 0.3s linear;
+    padding-top: 6px;
+
+}
+
+.main_buttonbottom:hover {
+    transform: translatey(8px);
+}
+
+.main_buttonbottom:hover .tooltipbottom {
+    opacity: 1;
+
+}
+
+/* right */
+.main_buttonright {
+    height: 40px;
+    width: 100px;
+    background-color: rgb(142, 210, 231);
+    color: black;
+    border-radius: 7px;
+    border-style: none;
+    padding: 5px;
+    font-size: 20px;
+    position: relative;
+    transition: all 0.3s linear;
+
+}
+
+.tooltipright {
+    height: 30px;
+    width: 100px;
+    color: azure;
+    opacity: 0;
+    background-color: rgb(25, 27, 29);
+    position: absolute;
+    top: 0px;
+    left: 120px;
+    border-radius: 7px;
+    opacity: 0;
+    transition: all 0.3s linear;
+    padding-top: 6px;
+
+}
+
+.main_buttonright:hover {
+    transform: translate(8px);
+}
+
+.main_buttonright:hover .tooltipright {
+    opacity: 1;
+}
