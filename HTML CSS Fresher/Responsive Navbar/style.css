@@ -1,29 +1,79 @@
-.container{
+
+
+.container {
     width: 90%;
-    height: 70px;
+    height: 82px;
     border: 2px solid red;
     display: flex;
     justify-content: space-around;
     align-items: center;
-    margin-left:5%;
+    margin-left: 5%;
     margin-right: 5%;
-    
+
 }
 
-.first{
+/* first div */
+
+.first {
     display: flex;
     justify-content: space-around;
+    align-items: center;
     gap: 20px;
 }
 
-.second{
+.logo {
+    height: 80px;
+    width: 114px;
+    border-radius: 10px;
+    background: none;
+}
+
+.course{
+    border-radius: 10px;
+    border-style: none;
+    height: 42px;
+    width: 135px;
+    background-color: #d7e2f7;
+    font-weight: bold;
+    font-size:15px ;
+
     display: flex;
     justify-content: space-around;
-    gap: 20px;
-     font-size: 20px ;
+    align-items: center;
+
    
+
 }
-button{
+
+
+/* second div */
+
+.second {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    gap: 20px;
+    font-size: 20px;
+
+}
+
+.list {
+    display: flex;
+    justify-content: space-between;
+    gap: 15px;
+    font-size:.975rem;
+    line-height: 1.25rem;
+    font-weight:500;
+
+}
+
+.list a:hover{
+    color: rgb(236, 27, 27);
+}
+
+.register {
+    width: 96px;
+    height: 45px;
     padding: 10px;
     color: white;
     background-color: rgb(236, 27, 27);
@@ -31,4 +81,119 @@ button{
     border-style: none;
 
 
+}
+
+
+/* Large screens (Desktops) */
+@media (min-width: 1200px) {
+    .container {
+        width: 80%;
+        margin-left: 10%;
+        margin-right: 10%;
+    }
+
+    .logo {
+        height: 90px;
+        width: 120px;
+    }
+
+    .course {
+        height: 45px;
+        width: 140px;
+        font-size: 16px;
+    }
+
+    .list {
+        gap: 20px;
+        font-size: 1rem;
+    }
+
+    .register {
+        width: 100px;
+        height: 50px;
+        font-size: 16px;
+    }
+}
+
+/* Medium screens (Tablets) */
+@media (max-width: 1024px) {
+    .container {
+        flex-direction: column;
+        height: auto;
+        padding: 10px 5%;
+    }
+
+    .first, .second {
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 10px;
+        margin-bottom: 10px;
+    }
+
+    .list {
+        display: grid;
+        grid-template-columns: repeat(2, auto); /* Two words stack in two rows */
+        gap: 5px;
+        font-size: 0.9rem;
+    }
+
+    .logo {
+        height: 60px;
+        width: 90px;
+    }
+
+    .course {
+        height: 35px;
+        width: 120px;
+        font-size: 14px;
+    }
+
+    .register {
+        width: 80px;
+        height: 40px;
+        font-size: 14px;
+    }
+}
+
+/* Small screens (Mobile phones) */
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+        height: auto;
+        padding: 10px 5%;
+    }
+
+    .first {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .logo {
+        height: 50px;
+        width: 80px;
+    }
+
+    .course {
+        height: 30px;
+        width: 100px;
+        font-size: 12px;
+    }
+
+    .second {
+        flex-direction: column;
+        gap: 10px;
+        font-size: 16px;
+    }
+
+    .list {
+        flex-direction: column;
+        gap: 8px;
+        font-size: 0.85rem;
+    }
+
+    .register {
+        width: 70px;
+        height: 35px;
+        font-size: 12px;
+    }
 }
