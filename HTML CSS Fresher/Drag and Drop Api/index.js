@@ -59,6 +59,7 @@
 
 // check palindrom
 function palindrom(str) {
+    
 
     if (str.length <= 1) {
         return false;
