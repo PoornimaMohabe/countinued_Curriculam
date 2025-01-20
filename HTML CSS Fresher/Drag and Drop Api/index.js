@@ -1,85 +1,50 @@
-// let condition = true;
+const list = document.getElementById('draggable-list');
+const items = document.querySelectorAll('.draggable-item');
 
-// const promise = new Promise((resolve, reject) => {
-//     setTimeout(() => {
-//         if (condition) {
-//             resolve(console.log("resolved promise")
-//             )
-//         }
-//         reject(console.log("reject promise")
-//         )
-//     }, 2000)
-// })
+let draggedItem = null;
 
-// promise
-//     .then((result) =>
-//         console.log(result)
-
-//     )
-//     .catch((error) =>
-//         console.log(error))
+items.forEach((item) => {
+    item.addEventListener('dragstart', (e) => {
+      draggedItem = item;
+      item.classList.add('dragging');
+    });
+  
+    item.addEventListener('dragend', () => {
+      draggedItem = null;
+      item.classList.remove('dragging');
+    });
+  });
 
 
-// flaterrn array
+// drag over and end
 
-// function flatterarray(arr){
-// return arr.reduce((acc, curr) => {
-// if(Array.isArray(curr)){
-//     return acc.concat(flatterarray(curr))
-// }
-// else{
-//    return acc.concat(curr)
-// }
-// }, [])
-
-
-// }
-
-
-
-
-
-// const input = [1, [2, [3, 4], 5], 6];
-// console.log(flatterarray(input));
-
-
-
-// reverse string
-
-// function substring(string) {
-//     let reverse = "";
-//     for (let c of string) {
-//         reverse = c + reverse;
-//     }
-//     return reverse;
-// }
-
-// var string = "hello";
-// console.log(substring(string));
-
-// check palindrom
-function palindrom(str) {
-    
-
-    if (str.length <= 1) {
-        return false;
+list.addEventListener('dragover', (e) => {
+    e.preventDefault();
+  
+    const afterElement = getDragAfterElement(list, e.clientY);
+    if (afterElement == null) {
+      list.appendChild(draggedItem);
+    } else {
+      list.insertBefore(draggedItem, afterElement);
     }
+  });
+  
 
-    let i = 0, j = str.length - 1;
-    while (i < j) {
-        if (str[i] !== str[j]) {
-            return false;
+// after current drag
 
+function getDragAfterElement(container, y) {
+    const draggableElements = [...container.querySelectorAll('.draggable-item:not(.dragging)')];
+  
+    return draggableElements.reduce(
+      (closest, child) => {
+        const box = child.getBoundingClientRect();
+        const offset = y - box.top - box.height / 2;
+        if (offset < 0 && offset > closest.offset) {
+          return { offset, element: child };
+        } else {
+          return closest;
         }
-        i++;
-        j--;
-        {
-            return true;
-        }
-    }
-
-
-}
-
-var str = "ajaxxajahjfiushgeiohj"
-console.log(palindrom(str));
+      },
+      { offset: Number.NEGATIVE_INFINITY }
+    ).element;
+  }

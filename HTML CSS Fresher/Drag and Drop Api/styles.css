@@ -1,0 +1,33 @@
+body {
+ 
+    text-align: center;
+    margin: 0;
+    padding: 20px;
+    background-color: #eeeefc;
+  }
+  
+  h1 {
+    color: #333;
+  }
+  
+  #draggable-list {
+    list-style: none;
+    padding: 0;
+    margin: 20px auto;
+    width: 150px;
+  }
+  
+  .draggable-item {
+    padding: 10px 15px;
+    margin: 5px 0;
+    background: #ddeff7;
+    
+    cursor: grab;
+    border-radius: 4px;
+  }
+  
+  .draggable-item.dragging {
+    opacity: 0.5;
+    background-color: #9fc1c7;
+  }
+  
