@@ -3,6 +3,7 @@ const items = document.querySelectorAll('.draggable-item');
 
 let draggedItem = null;
 
+
 items.forEach((item) => {
     item.addEventListener('dragstart', (e) => {
       draggedItem = item;
