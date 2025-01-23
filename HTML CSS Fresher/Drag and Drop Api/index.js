@@ -15,6 +15,7 @@ items.forEach((item) => {
       item.classList.remove('dragging');
     });
   });
+  
 
 
 // drag over and end
